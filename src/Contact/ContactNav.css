@@ -1,0 +1,20 @@
+.contact-nav {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 0 20px 0;
+}
+
+.contact-search {
+
+}
+
+.contact-filter-list {
+    display: flex;
+    gap: 20px;
+
+}
+
+.contact-filter {
+
+}

@@ -1,0 +1,28 @@
+.contact-page {
+    color: var(--black);
+}
+
+.contact-header {
+    position: relative;
+
+    height: 300px;
+
+    background-image: linear-gradient(to bottom right, var(--blue), var(--blue), var(--light-blue), var(--light-blue));
+}
+
+.contact-welcome {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    color: var(--white);
+}
+
+.contact-body {
+    padding: 20px 50px;
+}
+
+.contact-container {
+    display: flex;
+}
+

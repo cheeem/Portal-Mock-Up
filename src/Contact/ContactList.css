@@ -1,0 +1,32 @@
+.contact-table {
+    width: 100%;
+
+    border-collapse:collapse;
+}
+
+.contact-table th, .contact-row td {
+    padding: 5px;
+}
+
+.contact-table th {
+    text-align: left;
+    font-weight: 800;
+    color: var(--light-blue);
+}
+
+.contact-row td {
+}
+
+.contact-row {
+
+}
+
+.contact-row:hover {
+    background-color: lightgrey;
+
+    transition: 0.2s;
+}
+
+.contact-row a {
+
+}

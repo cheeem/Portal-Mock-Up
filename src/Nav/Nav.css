@@ -1,0 +1,114 @@
+.nav {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+
+    padding: 5px max(30px, 4vw);
+
+    width: 100%;
+    height: 60px;
+
+    background-color: var(--white);
+}
+
+.nav-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: max(10px, 1.5vw);
+
+    padding: 10px 0;
+
+    height: 100%;
+}
+
+.nav-header-img {
+    height: 100%;
+    width: 200px;
+
+    background-image: url('./img/OS_Logo_Vector.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.nav-link-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3vw;
+
+    height: 100%;
+
+    list-style: none;
+}
+
+@media screen and (max-width: 525px) {
+    .link-list {
+        gap: 0;
+    }
+}
+
+.nav li {
+    display: inline-block;
+    position: relative;
+}
+
+.nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    height: 100%;
+
+    font-size: 16px;
+}
+
+.nav-link-active:after {
+    display: block;
+    position: absolute;
+
+    margin-bottom: 5px;
+
+    bottom: 0;
+    left: 0;  
+    
+    height: 2.5px;
+    width: 100%;
+
+    background: none repeat scroll 0 0 transparent;
+    background: var(--highlight);
+
+    content: "";
+    
+    transition: 0.2s;
+}
+
+.nav-link-inactive:after { 
+    display: block;
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;  
+
+    margin-bottom: 5px;
+    
+    height: 2.5px;
+    width: 0;
+
+    background: none repeat scroll 0 0 transparent;
+    background: var(--black);
+
+    content: "";
+
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.nav-link-inactive:hover:after { 
+    left: 0; 
+
+    width: 100%; 
+}
