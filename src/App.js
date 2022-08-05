@@ -14,35 +14,52 @@ const user = {
 
 const contacts = [
   {
-    firstName: 'James',
-    lastName: 'Morgan',
+    fullName: 'James Morgan',
     company: "Morgan & Son",
     email: 'james.morgan@morganandson.org',
     phoneNumber: '921-555-6127',
-    location: "New York, USA"
+    location: "New York City, NY"
   },
   {
-    firstName: 'Ali',
-    lastName: 'Yu',
+    fullName: 'Ali Yu',
     company: "Technology Incorporated",
-    email: 'ali.yu@technologyinc.org',
+    email: 'ali.yu@technologyinc.com',
     phoneNumber: '202-555-3499',
-    location: "New York, USA"
+    location: "Los Angeles, CA"
   },
   {
-    firstName: 'Alexis',
-    lastName: 'Diaz',
+    fullName: 'Alexis Diaz',
     company: "Morgan & Son",
-    email: 'james.morgan@morganandson.org',
+    email: 'alexis.diaz@morganandson.org',
     phoneNumber: '434-555-5454',
-    location: "New York, USA"
+    location: "Boston, MA"
   },
+  {
+    company: "Big Corporation",
+    email: 'businessman@corporation.com',
+    location: "Town, NV"
+  },
+  {
+    fullName: 'Maureen Harper',
+    company: "Customer Agency",
+    email: 'm.harper@customeragency.com',
+    phoneNumber: '202-555-0178',
+    location: "Washington, DC"
+  },
+];
+
+const contactKeys = [
+  {id: 'fullName', display: 'Name'},
+  {id: 'company', display: 'Company'},
+  {id: 'email', display: 'Email'},
+  {id: 'phoneNumber', display: 'Phone Number'},
+  {id: 'location', display: 'Location'},
 ];
 
 const linkList = [
     {label: 'Leads', path: '/leads', element: <></>,},
     {label: 'Opportunities', path: '/opportunities', element: <></>,},
-    {label: 'Contacts', path: '/contacts', element: <ContactPage user={user} contacts={contacts} />,},
+    {label: 'Contacts', path: '/contacts', element: <ContactPage user={user} contacts={contacts} contactKeys={contactKeys} />,},
     {label: 'Vendors', path: '/vendors', element: <></>,},
     {label: 'Home', path: '/', element: <></>,},
 ];

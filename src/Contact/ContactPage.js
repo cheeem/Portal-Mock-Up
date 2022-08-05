@@ -1,21 +1,58 @@
 import './ContactPage.css';
-import { useReducer } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import { ContactNav } from './ContactNav.js';
 import { ContactList } from './ContactList.js';
 import { ContactData } from './ContactData.js';
 
-const contactFilters = [
-  {}, {}, {}, {},
-];
-
-const contactsReducer = (filteredContacts, action) => {
-
+const ACTIONS = {
+  DISPLAY: 'display',
+  SEARCH: 'search',
+  SELECT_KEY: 'select-key',
+  ADD_FILTER: 'add-filter',
 }
 
-function ContactPage({ user, contacts, }) {
+function ContactPage({ user, contacts, contactKeys }) {
 
-  const [displayContacts, contactsDipsatch] = useReducer(contactsReducer, contacts);
+  const reducer = (searchOptions, action) => {
+    switch(action.type) {
+      case ACTIONS.SEARCH:
+        //update search input
+        return {...searchOptions, searchInput: action.payload.input};
+      case ACTIONS.SELECT_KEY:
+        //set the selected keys to all available keys
+        searchOptions.selectedKeys = contactKeys;
+        //if the default option is not selected, set selectedKeys to the selected key
+        if(action.payload.id) searchOptions.selectedKeys = [{id: action.payload.id, display: action.payload.display}];
+        //update state
+        return {...searchOptions};
+      case ACTIONS.ADD_FILTER:
+        //define current search filters and find the index of the filter for the selected filter id
+        let i = searchOptions.filters.findIndex(filter => filter.id === action.payload.id);
+        //if there is a filter for the selected filter id, delete it
+        if(i !== -1) searchOptions.filters.splice(i, 1);
+        //if the filter has a value, add it
+        if(action.payload.value) searchOptions.filters = [...searchOptions.filters, {id: action.payload.id, value: action.payload.value}];
+        //return filters
+        return {...searchOptions};
+      default: 
+        return searchOptions;
+    }
+  }
 
+  const [searchOptions, dispatch] = useReducer(reducer, {searchInput: '', filters: [], selectedKeys: contactKeys});
+  const [contactDisplay, setcontactDisplay] = useState(contacts);
+
+  useEffect(() => {
+    //set contact list given search input, selected keys, and filters
+    setcontactDisplay(() => contacts.filter(contact => {
+      return searchOptions.selectedKeys.some(key => {
+        return contact[key.id]?.toLowerCase()?.includes(searchOptions.searchInput.toLowerCase());
+      }) && (searchOptions.filters.length ? searchOptions.filters.every(filter => {
+        return contact[filter.id] === filter.value;
+      }) : true);
+    }));
+  }, [contacts, searchOptions]);
+  
   return (
     <>
       <div className="contact-page">
@@ -26,9 +63,9 @@ function ContactPage({ user, contacts, }) {
           </h1> 
         </div> 
         <div className="contact-body">
-          <ContactNav contactFilters={contactFilters}/>
+          <ContactNav contacts={contacts} contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} />
           <div className="contact-container"> 
-            <ContactList displayContacts={displayContacts} />
+            <ContactList contacts={contacts} contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} />
             <ContactData />
           </div>
         </div>

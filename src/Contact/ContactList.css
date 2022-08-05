@@ -1,32 +1,27 @@
-.contact-table {
-    width: 100%;
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
 
-    border-collapse:collapse;
+    flex-grow: 1;
 }
 
-.contact-table th, .contact-row td {
-    padding: 5px;
+.contact-list thead, .contact-list tbody, .contact-list tr {
+    display: contents;
 }
 
-.contact-table th {
+.contact-list tr:hover td {
+    background-color: #EFEFEF;
+}
+
+.contact-list-filter th, .contact-list-row td {
+    padding: 10px;
+
     text-align: left;
-    font-weight: 800;
-    color: var(--light-blue);
+    font-size: 14px;
+
+    border-bottom: 1px solid #DDD;
 }
 
-.contact-row td {
-}
-
-.contact-row {
-
-}
-
-.contact-row:hover {
-    background-color: lightgrey;
-
-    transition: 0.2s;
-}
-
-.contact-row a {
-
+.contact-list-row td, .contact-list-row td>a {
+    font-weight: 200;
 }
