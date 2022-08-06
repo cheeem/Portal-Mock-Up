@@ -1,8 +1,14 @@
-.contact-list {
+.contact-table {
     display: grid;
-    grid-template-columns: repeat(5, auto);
 
     flex-grow: 1;
+}
+
+.contact-list-none-found {
+    margin-top: 30px;
+
+    text-align: center;
+    font-size: 24px;
 }
 
 .contact-list thead, .contact-list tbody, .contact-list tr {
@@ -22,6 +28,13 @@
     border-bottom: 1px solid #DDD;
 }
 
+.contact-list-filter th>select {
+
+}
+
 .contact-list-row td, .contact-list-row td>a {
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+
     font-weight: 200;
 }

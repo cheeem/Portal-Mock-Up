@@ -1,14 +1,14 @@
-import './ContactPage.css';
-import { useState, useEffect, useReducer } from 'react';
-import { ContactNav } from './ContactNav.js';
-import { ContactList } from './ContactList.js';
-import { ContactData } from './ContactData.js';
+import "./ContactPage.css";
+import { useState, useEffect, useReducer } from "react";
+import { ContactNav } from "./ContactNav.js";
+import { ContactList } from "./ContactList.js";
+import { ContactData } from "./ContactData.js";
 
 const ACTIONS = {
-  DISPLAY: 'display',
-  SEARCH: 'search',
-  SELECT_KEY: 'select-key',
-  ADD_FILTER: 'add-filter',
+  DISPLAY: "display",
+  SEARCH: "search",
+  SELECT_KEY: "select-key",
+  ADD_FILTER: "add-filter",
 }
 
 function ContactPage({ user, contacts, contactKeys }) {
@@ -20,7 +20,7 @@ function ContactPage({ user, contacts, contactKeys }) {
         return {...searchOptions, searchInput: action.payload.input};
       case ACTIONS.SELECT_KEY:
         //set the selected keys to all available keys
-        searchOptions.selectedKeys = contactKeys;
+        searchOptions.selectedKeys = contactKeys.display;
         //if the default option is not selected, set selectedKeys to the selected key
         if(action.payload.id) searchOptions.selectedKeys = [{id: action.payload.id, display: action.payload.display}];
         //update state
@@ -39,16 +39,16 @@ function ContactPage({ user, contacts, contactKeys }) {
     }
   }
 
-  const [searchOptions, dispatch] = useReducer(reducer, {searchInput: '', filters: [], selectedKeys: contactKeys});
+  const [searchOptions, dispatch] = useReducer(reducer, {searchInput: "", filters: [], selectedKeys: contactKeys.display});
   const [contactDisplay, setcontactDisplay] = useState(contacts);
 
   useEffect(() => {
     //set contact list given search input, selected keys, and filters
     setcontactDisplay(() => contacts.filter(contact => {
       return searchOptions.selectedKeys.some(key => {
-        return contact[key.id]?.toLowerCase()?.includes(searchOptions.searchInput.toLowerCase());
+        return contact[`display`][key.id]?.toLowerCase()?.includes(searchOptions.searchInput.toLowerCase());
       }) && (searchOptions.filters.length ? searchOptions.filters.every(filter => {
-        return contact[filter.id] === filter.value;
+        return contact[`display`][filter.id] === filter.value;
       }) : true);
     }));
   }, [contacts, searchOptions]);
@@ -66,7 +66,7 @@ function ContactPage({ user, contacts, contactKeys }) {
           <ContactNav contacts={contacts} contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} />
           <div className="contact-container"> 
             <ContactList contacts={contacts} contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} />
-            <ContactData />
+            {<ContactData />}
           </div>
         </div>
       </div>
