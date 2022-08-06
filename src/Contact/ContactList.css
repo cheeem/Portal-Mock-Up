@@ -1,4 +1,4 @@
-.contact-table {
+.contact-list-table {
     display: grid;
 
     flex-grow: 1;
@@ -11,30 +11,36 @@
     font-size: 24px;
 }
 
-.contact-list thead, .contact-list tbody, .contact-list tr {
+.contact-list-row {
     display: contents;
 }
 
-.contact-list tr:hover td {
+.contact-list-item:hover div {
     background-color: #EFEFEF;
 }
 
-.contact-list-filter th, .contact-list-row td {
+.contact-list-filter, .contact-list-key {
     padding: 10px;
 
     text-align: left;
     font-size: 14px;
 
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #EFEFEF;
 }
 
-.contact-list-filter th>select {
+.contact-list-key p, .contact-list-key a, .contact-list-filter select {
+    overflow: hidden;
 
+    max-width: 15vw;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.contact-list-row td, .contact-list-row td>a {
-    /* overflow: hidden;
-    text-overflow: ellipsis; */
+.contact-list-filter select{
+    width: 100%;
+}
 
+.contact-list-key>p, .contact-list-key>a {
     font-weight: 200;
 }

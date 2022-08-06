@@ -6,45 +6,53 @@ const ACTIONS = {
   ADD_FILTER: "add-filter",
 }
 
-const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dispatch }) => {
+const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dispatch, selected, setSelected }) => {
   //`repeat(${contactKeys.display.length}, auto)`
   return (
     <div className="contact-list">
-      <table className="contact-table" style={{gridTemplateColumns: `repeat(${contactKeys.display.length}, 1fr`}}> 
-        <thead>
-          <tr className="contact-list-filter">
-            {contactKeys.display.map((key, index) => (
-              <th key={index}>
-                <select onChange={(e) => dispatch({type: ACTIONS.ADD_FILTER, payload: {id: key.id, value: e.target.value}})}>
-                  <option value=""> {key.display} </option>
-                  {unique(pluck(pluck(contacts, [`display`]), [key.id])).map((value, index) => {if(value) return (
-                    <option key={index} value={value}> {value} </option>
-                  ); return ""})}
-                </select>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {contactDisplay?.map((contact, index) => (
-            <ContactItem key={index} rowIndex={index} contactKeys={contactKeys} contact={contact} />
+      <div className="contact-list-table"
+        style={{gridTemplateColumns: `repeat(${contactKeys.display.length}, 1fr)`}}
+      > 
+        <div className="contact-list-row contact-list-header">
+          {contactKeys.display.map((key, index) => (
+            <div className="contact-list-filter" key={index}>
+              <select
+                onChange={(e) => dispatch({type: ACTIONS.ADD_FILTER, payload: {id: key.id, value: e.target.value}})}
+              >
+                <option value=""> {key.display} </option>
+                {unique(pluck(pluck(contacts, [`display`]), [key.id])).map((value, index) => {if(value) return (
+                  <option key={index} value={value}> {value} </option>
+                ); return ""})}
+              </select>
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+        {contactDisplay?.map((contact, index) => (
+          <ContactItem key={index} rowIndex={index} contactKeys={contactKeys} contact={contact} selected={selected} setSelected={setSelected} />
+        ))}
+      </div>
       {contactDisplay.length ? undefined : <div className="contact-list-none-found"> No Search Results Found </div>}
     </div>
   )
 }
 
-const ContactItem = ({ rowIndex, contactKeys, contact }) => {
+const ContactItem = ({ rowIndex, contactKeys, contact, selected, setSelected }) => {
   //replace empty values with empty strings
   Object.values(contact.display).forEach(value => {if(!value) value = ""});
+  //determine if the contactItem is selected
+  console.log(selected);
+  const isSelected = selected.index === rowIndex;
   return (
-    <tr className="contact-list-row">
-      {contactKeys.display.map((key, index) => (
-        <td key={`${rowIndex}-${index}`}> {contact[`display`][key.id]} </td>
+    <div className="contact-list-row contact-list-item"
+      style={{backgroundColor: isSelected ? `blue` : `unset`}}
+      onClick={(e) => setSelected(() => isSelected ? {index: undefined, contact: undefined} : {index: rowIndex, contact})}
+    >
+      {contactKeys.display.map((key, itemIndex) => (
+        <div className="contact-list-key" key={`${rowIndex}-${itemIndex}`}>
+          <p> {contact[`display`][key.id]} </p>
+        </div>
       ))}
-    </tr>
+    </div>
   )
 }
 

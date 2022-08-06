@@ -7,7 +7,7 @@ const ACTIONS = {
   SELECT_KEY: "select-key",
 }
 
-const ContactNav = ({ contacts, contactKeys, contactDisplay, searchOptions, dispatch }) => {
+const ContactNav = ({ contactKeys, contactDisplay, searchOptions, dispatch }) => {
   
   //extract all values for each selected key for each contact object into a single array
   const contactValues = unique(searchOptions.selectedKeys.flatMap(key => pluck(pluck(contactDisplay, [`display`]), [key.id])));
@@ -16,7 +16,9 @@ const ContactNav = ({ contacts, contactKeys, contactDisplay, searchOptions, disp
   <div className="contact-nav">
     <div className="contact-search">
       <label> Search Your Contacts </label>
-      <input list="contact-search" type="text" onChange={(e) => dispatch({type: ACTIONS.SEARCH, payload: {input: e.target.value},})} />
+      <input list="contact-search" type="text"
+        onChange={(e) => dispatch({type: ACTIONS.SEARCH, payload: {input: e.target.value},})}
+      />
       <select className="contact-search-filter"
         onChange={(e) => dispatch({type: ACTIONS.SELECT_KEY, payload: {id: e.target.value, display: contactKeys.display[e.target.selectedIndex-1]?.display}})}
       >
