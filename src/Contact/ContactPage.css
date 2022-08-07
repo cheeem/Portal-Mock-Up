@@ -19,10 +19,14 @@
 }
 
 .contact-body {
-    padding: 10px 50px;
-}
-
-.contact-container {
+    position: relative;
     display: flex;
+    justify-content: space-between;
+
+    /* height: calc(100vh - var(--nav-height)); */
+
+    padding-left: 50px;
+
+    border-top: 12px solid #EFEFEF;
 }
 

@@ -64,11 +64,11 @@ function ContactPage({ user, contacts, contactKeys }) {
           </h1> 
         </div> 
         <div className="contact-body">
-          <ContactNav contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} />
-          <div className="contact-container"> 
+          <div className="contact-access"> 
+            <ContactNav contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} />
             <ContactList contacts={contacts} contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} selected={selected} setSelected={setSelected} />
-            {<ContactData />}
           </div>
+          <ContactData contactKeys={contactKeys} selected={selected} />
         </div>
       </div>
     </>

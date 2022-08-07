@@ -12,6 +12,29 @@ const user = {
     rank: 0,
 };
 
+const MaureenHarperArray = [];
+for(let i = 0; i < 200; i++){
+  MaureenHarperArray.push({
+    display: {
+      fullName: "Maureen Harper",
+      company: "Customer Agency",
+      email: "m.harper@customeragency.com",
+      phoneNumber: "202-555-0178",
+      location: "Washington, DC",
+    },
+    basic: {
+      fullName: "Maureen Harper",
+      company: "Customer Agency",
+      email: "m.harper@customeragency.com",
+      phoneNumber: "202-555-0178",
+      location: "Washington, DC",
+    },
+    advanced: {
+      
+    },
+  });
+}
+
 const contacts = [
   {
     display: {
@@ -82,29 +105,10 @@ const contacts = [
       location: "Town, NV",
     },
     advanced: {
-
+      jordans: "FAKE"
     }
   },
-  {
-    display: {
-      fullName: "Maureen Harper",
-      company: "Customer Agency",
-      email: "m.harper@customeragency.com",
-      phoneNumber: "202-555-0178",
-      location: "Washington, DC",
-    },
-    basic: {
-      fullName: "Maureen Harper",
-      company: "Customer Agency",
-      email: "m.harper@customeragency.com",
-      phoneNumber: "202-555-0178",
-      location: "Washington, DC",
-    },
-    advanced: {
-      
-    },
-  },
-];
+].concat(MaureenHarperArray);
 
 const contactKeys = {
   display: [
@@ -122,7 +126,7 @@ const contactKeys = {
     {id: "location", display: "Location"},
   ],
   advanced: [
-    
+    {id: "jordans", display: "Jordans"}
   ],
   /*{id: "position", display: "Position"},*/
 };
@@ -137,10 +141,10 @@ const linkList = [
 
 const App = () => {
   return (
-    <>
+    <div className="App">
         <Nav linkList={linkList} />
         <Routes> {linkList.map((link, index) => <Route key={index} path={link.path} element={link.element} />)} </Routes>
-    </>
+    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import "./ContactList.css";
-import React from "react";
+import { useState } from "react";
 import { pluck, unique } from "../Utils/arrayUtils.js";
 
 const ACTIONS = {
@@ -37,19 +37,31 @@ const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dis
 }
 
 const ContactItem = ({ rowIndex, contactKeys, contact, selected, setSelected }) => {
+
+  const [hovered, setHovered] = useState(false);
+  
   //replace empty values with empty strings
   Object.values(contact.display).forEach(value => {if(!value) value = ""});
   //determine if the contactItem is selected
-  console.log(selected);
   const isSelected = selected.index === rowIndex;
+  //define styles
+  const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `unset`; 
+  const color = isSelected ? `white` : `black`;
+  const transition = isSelected ? `0.2s` : '0.1s';
+
   return (
     <div className="contact-list-row contact-list-item"
-      style={{backgroundColor: isSelected ? `blue` : `unset`}}
-      onClick={(e) => setSelected(() => isSelected ? {index: undefined, contact: undefined} : {index: rowIndex, contact})}
+      onClick={() => setSelected(() => isSelected ? {index: undefined, contact: undefined} : {index: rowIndex, contact})}
+      onMouseEnter={() => setHovered(() => true)}
+      onMouseLeave={() => setHovered(() => false)}
     >
       {contactKeys.display.map((key, itemIndex) => (
-        <div className="contact-list-key" key={`${rowIndex}-${itemIndex}`}>
-          <p> {contact[`display`][key.id]} </p>
+        <div className="contact-list-key" key={`${rowIndex}-${itemIndex}`}
+          style={{backgroundColor, transition}}
+        >
+          <p title={contact[`display`][key.id]}
+            style={{color, transition}}
+          > {contact[`display`][key.id]} </p>
         </div>
       ))}
     </div>

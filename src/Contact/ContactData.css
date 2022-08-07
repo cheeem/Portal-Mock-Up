@@ -1,2 +1,44 @@
 .contact-data {
+    padding: 10px 0;
+
+    border-color: #EFEFEF;
+}
+
+.contact-data-display {
+    position: sticky;
+    top: var(--nav-height);
+}
+
+.contact-data-section {
+
+}
+
+.contact-data-header {
+    padding-bottom: 2px;
+
+    text-align: center;
+    font-size: 22px;
+
+    border-bottom: 2px solid black;
+}
+
+.contact-data-field {
+
+}
+
+.contact-data-field>h3, .contact-data-field>p {
+    overflow: hidden;
+
+    width: 20vw;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.contact-data-field h3 {
+
+}
+
+.contact-data-field p {
+    font-weight: 200;
 }
