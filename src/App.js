@@ -15,6 +15,7 @@ const user = {
 const MaureenHarperArray = [];
 for(let i = 0; i < 200; i++){
   MaureenHarperArray.push({
+    id: 4+i,
     display: {
       fullName: "Maureen Harper",
       company: "Customer Agency",
@@ -37,6 +38,7 @@ for(let i = 0; i < 200; i++){
 
 const contacts = [
   {
+    id: 0,
     display: {
       fullName: "James Morgan",
       company: "Morgan & Son",
@@ -56,6 +58,7 @@ const contacts = [
     },
   },
   {
+    id: 1,
     display: {
       fullName: "Ali Yu",
       company: "Technology Incorporated",
@@ -75,6 +78,7 @@ const contacts = [
     },
   },
   {
+    id: 2,
     display: {
       fullName: "Alexis Diaz",
       company: "Morgan & Son",
@@ -94,6 +98,7 @@ const contacts = [
     },
   },
   {
+    id: 3,
     display: {
       company: "Big Corporation",
       email: "businessman@corporation.com",

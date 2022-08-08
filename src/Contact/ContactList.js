@@ -6,7 +6,7 @@ const ACTIONS = {
   ADD_FILTER: "add-filter",
 }
 
-const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dispatch, selected, setSelected }) => {
+const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dispatch, selectedContact, setSelectedContact }) => {
   //`repeat(${contactKeys.display.length}, auto)`
   return (
     <div className="contact-list">
@@ -28,7 +28,7 @@ const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dis
           ))}
         </div>
         {contactDisplay?.map((contact, index) => (
-          <ContactItem key={index} rowIndex={index} contactKeys={contactKeys} contact={contact} selected={selected} setSelected={setSelected} />
+          <ContactItem key={index} rowIndex={index} contactKeys={contactKeys} contact={contact} selectedContact={selectedContact} setSelectedContact={setSelectedContact} />
         ))}
       </div>
       {contactDisplay.length ? undefined : <div className="contact-list-none-found"> No Search Results Found </div>}
@@ -36,14 +36,14 @@ const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dis
   )
 }
 
-const ContactItem = ({ rowIndex, contactKeys, contact, selected, setSelected }) => {
+const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelectedContact }) => {
 
   const [hovered, setHovered] = useState(false);
   
   //replace empty values with empty strings
   Object.values(contact.display).forEach(value => {if(!value) value = ""});
   //determine if the contactItem is selected
-  const isSelected = selected.index === rowIndex;
+  const isSelected = contact.id === selectedContact?.id;
   //define styles
   const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `unset`; 
   const color = isSelected ? `white` : `black`;
@@ -51,7 +51,7 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selected, setSelected }) 
 
   return (
     <div className="contact-list-row contact-list-item"
-      onClick={() => setSelected(() => isSelected ? {index: undefined, contact: undefined} : {index: rowIndex, contact})}
+      onClick={() => setSelectedContact(() => isSelected ? undefined : contact)}
       onMouseEnter={() => setHovered(() => true)}
       onMouseLeave={() => setHovered(() => false)}
     >

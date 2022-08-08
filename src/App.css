@@ -30,6 +30,8 @@
     --highlight-translucent: var(--light-blue-translucent);
     /* resizing ratios */
     --nav-height: 60px;
+    --contact-header-height: 300px;
+    --contact-border-size: 12px;
 }
 
 span {

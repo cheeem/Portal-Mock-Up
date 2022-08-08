@@ -41,7 +41,7 @@ function ContactPage({ user, contacts, contactKeys }) {
 
   const [searchOptions, dispatch] = useReducer(reducer, {searchInput: "", filters: [], selectedKeys: contactKeys.display});
   const [contactDisplay, setContactDisplay] = useState(contacts);
-  const [selected, setSelected] = useState({index: undefined, contact: undefined});
+  const [selectedContact, setSelectedContact] = useState(undefined);
 
   useEffect(() => {
     //set contact list given search input, selected keys, and filters
@@ -53,6 +53,10 @@ function ContactPage({ user, contacts, contactKeys }) {
       }) : true);
     }));
   }, [contacts, searchOptions]);
+
+  useEffect(() => {
+    if(!contactDisplay.find(contact => contact.id === selectedContact?.id)) setSelectedContact(undefined);
+  }, [contactDisplay, selectedContact]);
   
   return (
     <>
@@ -63,12 +67,13 @@ function ContactPage({ user, contacts, contactKeys }) {
             {user?.firstName ? `, ${user.firstName}.` : undefined}
           </h1> 
         </div> 
+        <div className="contact-body-border-top"> </div>
         <div className="contact-body">
           <div className="contact-access"> 
             <ContactNav contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} />
-            <ContactList contacts={contacts} contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} selected={selected} setSelected={setSelected} />
+            <ContactList contacts={contacts} contactKeys={contactKeys} contactDisplay={contactDisplay} searchOptions={searchOptions} dispatch={dispatch} selectedContact={selectedContact} setSelectedContact={setSelectedContact} />
           </div>
-          <ContactData contactKeys={contactKeys} selected={selected} />
+          <ContactData contactKeys={contactKeys} selectedContact={selectedContact} />
         </div>
       </div>
     </>
