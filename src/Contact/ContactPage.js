@@ -55,7 +55,7 @@ function ContactPage({ user, contacts, contactKeys }) {
   }, [contacts, searchOptions]);
 
   useEffect(() => {
-    if(!contactDisplay.find(contact => contact.id === selectedContact?.id)) setSelectedContact(undefined);
+    if(selectedContact && !contactDisplay.find(contact => contact.id === selectedContact?.id)) setSelectedContact(undefined);
   }, [contactDisplay, selectedContact]);
   
   return (

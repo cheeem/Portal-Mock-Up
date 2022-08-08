@@ -117,21 +117,21 @@ const contacts = [
 
 const contactKeys = {
   display: [
-    {id: "fullName", display: "Name"},
-    {id: "company", display: "Company"},
-    {id: "email", display: "Email"},
-    {id: "phoneNumber", display: "Phone Number"},
-    {id: "location", display: "Location"},
+    {id: "fullName", display: "👤 Name"},
+    {id: "company", display: "🏢 Company"},
+    {id: "email", display: "📧 Email"},
+    {id: "phoneNumber", display: "📱 Phone Number"},
+    {id: "location", display: "🗺️ Location"},
   ],
   basic: [
-    {id: "fullName", display: "Name"},
-    {id: "company", display: "Company"},
-    {id: "email", display: "Email"},
-    {id: "phoneNumber", display: "Phone Number"},
-    {id: "location", display: "Location"},
+    {id: "fullName", display: "👤 Name"},
+    {id: "company", display: "🏢 Company"},
+    {id: "email", display: "📧 Email"},
+    {id: "phoneNumber", display: "📱 Phone Number"},
+    {id: "location", display: "🗺️ Location"},
   ],
   advanced: [
-    {id: "jordans", display: "Jordans"}
+    {id: "jordans", display: "👟 Jordans"}
   ],
   /*{id: "position", display: "Position"},*/
 };

@@ -19,6 +19,7 @@ const createDataSection = (contactKeys, selectedContact, type) => {
 }
 
 const ContactData = ({ contactKeys, selectedContact }) => {
+  
   const basicData = createDataSection(contactKeys, selectedContact, "basic");
   const advancedData = createDataSection(contactKeys, selectedContact, "advanced");
 

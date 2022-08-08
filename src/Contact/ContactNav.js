@@ -15,14 +15,14 @@ const ContactNav = ({ contactKeys, contactDisplay, searchOptions, dispatch }) =>
   return (
   <div className="contact-nav">
     <div className="contact-search">
-      <label> Search Your Contacts </label>
+      <label> 🔎 Search Your Contacts </label>
       <input list="contact-search" type="text"
         onChange={(e) => dispatch({type: ACTIONS.SEARCH, payload: {input: e.target.value},})}
       />
       <select className="contact-search-filter"
         onChange={(e) => dispatch({type: ACTIONS.SELECT_KEY, payload: {id: e.target.value, display: contactKeys.display[e.target.selectedIndex-1]?.display}})}
       >
-        <option value=""> No Search Filters </option>
+        <option value=""> Search By 🌐 All Fields </option>
         {contactKeys.display.map((key, index) => (
           <option key={index} value={key.id}> Search By {key.display} </option>
         ))}

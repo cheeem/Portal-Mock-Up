@@ -28,9 +28,11 @@
     /* highlights */
     --highlight: var(--light-blue);
     --highlight-translucent: var(--light-blue-translucent);
-    /* resizing ratios */
+    /* nav ratios */
     --nav-height: 60px;
-    --contact-header-height: 300px;
+    /* contact ratios */
+    --contact-nav-height: 100px;
+    --contact-header-height: 250px;
     --contact-border-size: 12px;
 }
 
