@@ -1,4 +1,5 @@
 .contact-nav {
+    z-index: 4;
     position: sticky;
     top: calc(var(--nav-height) + var(--contact-border-size));
     display: flex;

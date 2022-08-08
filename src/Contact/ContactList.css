@@ -19,8 +19,11 @@
 }
 
 .contact-list-filter {
+    z-index: 3;
     position: sticky;
     top: calc(var(--nav-height) + var(--contact-border-size) + var(--contact-nav-height));
+
+    height: var(--contact-list-filter-height);
 
     background-color: white;
 }

@@ -45,9 +45,14 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelec
   //determine if the contactItem is selected
   const isSelected = contact.id === selectedContact?.id;
   //define styles
-  const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `unset`; 
-  const color = isSelected ? `white` : `black`;
-  const transition = isSelected ? `0.2s` : '0.1s';
+    //key container styles
+    const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `unset`; 
+    const position = isSelected ? `sticky` : `unset`;
+    const top = isSelected ? `calc(var(--nav-height) + var(--contact-border-size) + var(--contact-nav-height) + var(--contact-list-filter-height))` : `unset`
+    //key text styles
+    const color = isSelected ? `white` : `black`;
+    //universal styles
+    const transition = isSelected ? `0.2s` : '0.1s';
 
   return (
     <div className="contact-list-row contact-list-item"
@@ -57,10 +62,10 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelec
     >
       {contactKeys.display.map((key, itemIndex) => (
         <div className="contact-list-key" key={`${rowIndex}-${itemIndex}`}
-          style={{backgroundColor, transition}}
+          style={{transition, backgroundColor, position, top}}
         >
           <p title={contact[`display`][key.id]}
-            style={{color, transition}}
+            style={{transition, color}}
           > {contact[`display`][key.id]} </p>
         </div>
       ))}
