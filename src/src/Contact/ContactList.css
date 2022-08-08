@@ -1,6 +1,5 @@
 .contact-list-table {
     display: grid;
-
     flex-grow: 1;
 }
 
@@ -13,6 +12,17 @@
 
 .contact-list-row {
     display: contents;
+}
+
+.contact-list-header {
+    position: relative;
+}
+
+.contact-list-filter {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--contact-border-size) + var(--contact-nav-height));
+
+    background-color: white;
 }
 
 .contact-list-filter, .contact-list-key {
@@ -33,7 +43,7 @@
     text-overflow: ellipsis;
 }
 
-.contact-list-filter select{
+.contact-list-filter select {
     width: 100%;
 }
 

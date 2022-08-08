@@ -22,7 +22,7 @@ const ContactNav = ({ contactKeys, contactDisplay, searchOptions, dispatch }) =>
       <select className="contact-search-filter"
         onChange={(e) => dispatch({type: ACTIONS.SELECT_KEY, payload: {id: e.target.value, display: contactKeys.display[e.target.selectedIndex-1]?.display}})}
       >
-        <option value=""> 🚫 No Search Filters </option>
+        <option value=""> Search By 🌐 All Fields </option>
         {contactKeys.display.map((key, index) => (
           <option key={index} value={key.id}> Search By {key.display} </option>
         ))}

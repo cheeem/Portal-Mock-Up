@@ -7,7 +7,7 @@
     padding: 5px max(30px, 4vw);
 
     width: 100%;
-    height: var(--nav-height);
+    height: calc(var(--nav-height) + 1px);
 
     background-color: var(--white);
 }
@@ -71,7 +71,7 @@
     display: block;
     position: absolute;
 
-    margin-bottom: 5px;
+    margin-bottom: 7.5px;
 
     bottom: 0;
     left: 0;  
@@ -94,7 +94,7 @@
     bottom: 0;
     left: 50%;  
 
-    margin-bottom: 5px;
+    margin-bottom: 7.5px;
     
     height: 2.5px;
     width: 0;

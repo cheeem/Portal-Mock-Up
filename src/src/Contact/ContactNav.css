@@ -1,6 +1,12 @@
 .contact-nav {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--contact-border-size));
     display: flex;
     justify-content: space-between;
+
+    height: var(--contact-nav-height);
+
+    background-color: white;
 }
 
 .contact-search {
