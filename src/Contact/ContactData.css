@@ -1,8 +1,6 @@
 .contact-data {
     min-height: calc(100vh - var(--contact-header-height) - var(--contact-border-size));
 
-    padding: 10px 0;
-
     border-color: #EFEFEF;
 }
 
@@ -10,13 +8,15 @@
 .contact-data-display {
     position: sticky;
     top: calc(var(--nav-height) + var(--contact-border-size));
+
+    padding: 10px 0;
 }
 
 .contact-data-section {
-
 }
 
 .contact-data-header {
+    margin-bottom: 5px;
     padding-bottom: 2px;
 
     text-align: center;
