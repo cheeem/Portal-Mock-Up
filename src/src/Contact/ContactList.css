@@ -1,0 +1,42 @@
+.contact-list-table {
+    display: grid;
+
+    flex-grow: 1;
+}
+
+.contact-list-none-found {
+    margin-top: 30px;
+
+    text-align: center;
+    font-size: 24px;
+}
+
+.contact-list-row {
+    display: contents;
+}
+
+.contact-list-filter, .contact-list-key {
+    padding: 10px;
+
+    text-align: left;
+    font-size: 14px;
+
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.contact-list-key p, .contact-list-key a, .contact-list-filter select {
+    overflow: hidden;
+
+    /* max-width: 15vw; */
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.contact-list-filter select{
+    width: 100%;
+}
+
+.contact-list-key>p, .contact-list-key>a {
+    font-weight: 200;
+}

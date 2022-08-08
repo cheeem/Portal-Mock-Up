@@ -1,0 +1,22 @@
+.contact-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 5px;
+
+    padding: 10px;
+}
+
+.contact-search-label {
+
+}
+
+.contact-search-input {
+
+}
