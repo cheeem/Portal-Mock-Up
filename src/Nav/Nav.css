@@ -52,6 +52,8 @@
 .nav li {
     display: inline-block;
     position: relative;
+
+    border-radius: 10px;
 }
 
 .nav a {

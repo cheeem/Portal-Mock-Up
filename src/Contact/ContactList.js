@@ -11,9 +11,12 @@ const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dis
   return (
     <div className="contact-list">
       <div className="contact-list-table"
-        style={{gridTemplateColumns: `repeat(${contactKeys.display.length}, 1fr)`}}
+        style={{gridTemplateColumns: `auto repeat(${contactKeys.display.length}, 1fr)`}}
       > 
         <div className="contact-list-row contact-list-header">
+          <div className="contact-list-filter"> 
+            <p> # </p>
+          </div>
           {contactKeys.display.map((key, index) => {
             const selectedValue = searchOptions.filters.find(filter => filter.id === key.id)?.value;
             return (
@@ -63,6 +66,13 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelec
       onMouseEnter={() => setHovered(() => true)}
       onMouseLeave={() => setHovered(() => false)}
     >
+      <div className="contact-list-key"
+        style={{transition, backgroundColor, position, top, bottom}}
+      > 
+        <p
+          style={{transition, color}}
+        > {rowIndex + 1} </p>
+      </div>
       {contactKeys.display.map((key, itemIndex) => (
         <div className="contact-list-key" key={`${rowIndex}-${itemIndex}`}
           style={{transition, backgroundColor, position, top, bottom}}

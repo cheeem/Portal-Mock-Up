@@ -67,10 +67,10 @@ function ContactPage({ user, contacts, contactKeys }) {
         1
       ) : (
         //sort by the selected sort key by chosen ascending/descending order
-        a[`display`][searchOptions.sort.id] > b[`display`][searchOptions.sort.id] ? ( 
-          searchOptions.sort.isDescending ? -1 : 1
+        (searchOptions.sort.isDescending ? a : b)[`display`][searchOptions.sort.id] < (searchOptions.sort.isDescending ? b : a)[`display`][searchOptions.sort.id] ? ( 
+          1
         ) : (
-          searchOptions.sort.isDescending ? 1 : -1
+          -1
         )
       )
     )));

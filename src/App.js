@@ -13,9 +13,9 @@ const user = {
 };
 
 const MaureenHarperArray = [];
-for(let i = 0; i < 200; i++){
+for(let i = 0; i < 30; i++){
   MaureenHarperArray.push({
-    id: 4+i,
+    id: 5+i,
     display: {
       fullName: "Maureen Harper",
       company: "Customer Agency",
@@ -111,8 +111,27 @@ const contacts = [
     },
     advanced: {
       jordans: "FAKE"
-    }
+    },
   },
+  {
+    id: 4,
+    display: {
+      fullName: "ZAZA Jordan",
+      company: "Lofts",
+      email: "iownlofts@lofts.com",
+      location: "Havana, MI",
+    },
+    basic: {
+      fullName: "ZAZA Jordan",
+      company: "Lofts",
+      email: "iownlofts@lofts.com",
+      location: "Havana, MI",
+    },
+    advanced: {
+      jordans: "REAL"
+    },
+  },
+  ...MaureenHarperArray
 ]
 
 const contactKeys = {
