@@ -113,7 +113,7 @@ const contacts = [
       jordans: "FAKE"
     }
   },
-].concat(MaureenHarperArray);
+]
 
 const contactKeys = {
   display: [

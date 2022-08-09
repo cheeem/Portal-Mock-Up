@@ -14,18 +14,20 @@ const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dis
         style={{gridTemplateColumns: `repeat(${contactKeys.display.length}, 1fr)`}}
       > 
         <div className="contact-list-row contact-list-header">
-          {contactKeys.display.map((key, index) => (
-            <div className="contact-list-filter" key={index}>
-              <select
-                onChange={(e) => dispatch({type: ACTIONS.ADD_FILTER, payload: {id: key.id, value: e.target.value}})}
-              >
-                <option value=""> {key.display} </option>
-                {unique(pluck(pluck(contacts, [`display`]), [key.id])).map((value, index) => {if(value) return (
-                  <option key={index} value={value}> {value} </option>
-                ); return ""})}
-              </select>
-            </div>
-          ))}
+          {contactKeys.display.map((key, index) => {
+            const selectedValue = searchOptions.filters.find(filter => filter.id === key.id)?.value;
+            return (
+              <div className="contact-list-filter" key={index}>
+                <select value={selectedValue ? selectedValue : key.display}
+                  onChange={(e) => dispatch({type: ACTIONS.ADD_FILTER, payload: {id: key.id, value: e.target.value}})}
+                >
+                  <option value=""> {key.display} </option>
+                  {unique(pluck(pluck(contacts, [`display`]), [key.id])).map((value, index) => {if(value) return (
+                    <option key={index} value={value}> {value} </option>
+                  ); return ""})}
+                </select>
+              </div>
+            )})}
         </div>
         {contactDisplay?.map((contact, index) => (
           <ContactItem key={index} rowIndex={index} contactKeys={contactKeys} contact={contact} selectedContact={selectedContact} setSelectedContact={setSelectedContact} />
@@ -49,6 +51,7 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelec
     const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `unset`; 
     const position = isSelected ? `sticky` : `unset`;
     const top = isSelected ? `calc(var(--nav-height) + var(--contact-border-size) + var(--contact-nav-height) + var(--contact-list-filter-height))` : `unset`
+    const bottom = `0`;
     //key text styles
     const color = isSelected ? `white` : `black`;
     //universal styles
@@ -62,7 +65,7 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelec
     >
       {contactKeys.display.map((key, itemIndex) => (
         <div className="contact-list-key" key={`${rowIndex}-${itemIndex}`}
-          style={{transition, backgroundColor, position, top}}
+          style={{transition, backgroundColor, position, top, bottom}}
         >
           <p title={contact[`display`][key.id]}
             style={{transition, color}}

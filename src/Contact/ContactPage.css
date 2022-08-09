@@ -21,9 +21,7 @@
 .contact-body {
     position: relative;
     display: flex;
-    justify-content: space-between;
-
-    padding-left: 50px;
+    justify-content: center;
 }
 
 .contact-body-border-top {
@@ -34,5 +32,9 @@
     height: var(--contact-border-size);
     
     background-color: #EFEFEF;
+}
+
+.contact-access {
+
 }
 
