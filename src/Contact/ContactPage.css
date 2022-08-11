@@ -5,9 +5,6 @@
     --contact-list-filter-height: 43px;
 }
 
-.contact-page {
-}
-
 .contact-body {
     position: relative;
     display: flex;
@@ -23,10 +20,6 @@
 
     height: calc(var(--contact-border-size) + 1px);
     
-    background-color: #EFEFEF;
-}
-
-.contact-access {
-
+    background-color: var(--light-grey);
 }
 

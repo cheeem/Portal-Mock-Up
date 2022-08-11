@@ -10,22 +10,19 @@
     /* text-shadow: 0px max(2px, 0.3vw) max(15px, 1.5vw) rgba(0,0,0,0.2); */
 }
 
-:root {
-    /* translucency */
-    --translucency-alpha: 0.1;
-    
+:root {    
     /* color palette */
-	--white: rgba(255, 255, 255, 1);
-	--black: rgba(34, 34, 34, 1);
 	--grey: rgba(71, 71, 71, 1);
-	--red: rgba(170, 24, 44, 1);
-	--blue: rgba(0, 47, 135, 1);
+    --light-grey: rgba(239, 239, 239, 1);
 	--light-blue: rgba(0, 171, 200, 1);
-    --light-blue-translucent: rgba(0, 171, 200, var(--translucency-alpha));
 	--green: rgba(162, 212, 94, 1);
 	--purple: rgba(164, 90, 149, 1);
 	--orange: rgba(248, 141, 42, 1);
-	--transparent: rgba(255, 255, 255, 0);
+
+    /* alpha color palette */
+    --transparent: rgba(255, 255, 255, 0);
+    --translucency-alpha: 0.1;
+    --light-blue-translucent: rgba(0, 171, 200, var(--translucency-alpha));
 
     /* filter color palette */
     /* --filter-white: invert(76%) sepia(100%) saturate(0%) hue-rotate(156deg) brightness(108%) contrast(106%); */
@@ -33,7 +30,7 @@
     /* highlights */
     --highlight: var(--light-blue);
     --highlight-translucent: var(--light-blue-translucent);
-    --secondary-highlight: white;
+    --highlight-secondary: /* var(--orange); */ white;
     
     /* universal styles */
     --background-color: var(--light-blue);
@@ -59,6 +56,6 @@ span {
     bottom: 20px;
     left: 20px;
 
-    color: var(--white);
+    color: white;
 }
 

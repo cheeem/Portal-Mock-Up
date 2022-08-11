@@ -38,7 +38,6 @@
 
   padding: var(--nav-item-padding);
 
-  color: #333;
   text-decoration: none;
 }
 
@@ -106,7 +105,7 @@
   width: calc(var(--nav-icon-size) * 2);
   height: calc(var(--nav-icon-size) * 2);
 
-  background: var(--secondary-highlight);
+  background: var(--highlight-secondary);
 }
 
 .nav-indicator::before {

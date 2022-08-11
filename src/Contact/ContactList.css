@@ -24,8 +24,6 @@
     top: calc(var(--contact-border-size) + var(--contact-nav-height));
 
     height: var(--contact-list-filter-height);
-
-    background-color: white;
 }
 
 .contact-list-filter, .contact-list-key {
@@ -34,7 +32,25 @@
     text-align: left;
     font-size: 14px;
 
-    border-bottom: 1px solid #EFEFEF;
+    background-color: white;
+
+    border-bottom: 1px solid var(--light-grey);
+
+    transition: 0.1s;
+}
+
+.contact-list-item:hover div:not(.contact-list-key-selected) {
+    background-color: var(--light-grey);
+}
+
+.contact-list-key-selected {
+    position: sticky;
+    top: calc(var(--contact-border-size) + var(--contact-nav-height) + var(--contact-list-filter-height));
+    bottom: 0;
+
+    background-color: var(--highlight);
+
+    transition: 0.2s;
 }
 
 .contact-list-key p, .contact-list-key a, .contact-list-filter select {
@@ -50,6 +66,12 @@
     width: 100%;
 }
 
-.contact-list-key>p, .contact-list-key>a {
+.contact-list-key p, .contact-list-key a {
     font-weight: 200;
+}
+
+.contact-list-key-selected p, .contact-list-key-selected a {
+    color: white;
+
+    transition: 0.2s;
 }

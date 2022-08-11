@@ -1,19 +1,19 @@
 .contact-data {
     min-height: calc(100vh - var(--contact-header-height) - var(--contact-border-size));
 
-    border-color: #EFEFEF;
+    border-color: var(--light-grey);
 }
 
+.contact-data-visible {
+    padding: 10px 20px;
+    border-left: var(--contact-border-size) solid var(--light-grey);
+}
 
 .contact-data-display {
     position: sticky;
     top: var(--contact-border-size);
 
     padding: 10px 0;
-}
-
-.contact-data-section {
-    
 }
 
 .contact-data-header {
@@ -26,10 +26,6 @@
     border-bottom: 3px solid black;
 }
 
-.contact-data-field {
-
-}
-
 .contact-data-field>h3, .contact-data-field>p {
     overflow: hidden;
 
@@ -37,10 +33,6 @@
 
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-.contact-data-field h3 {
-
 }
 
 .contact-data-field p {

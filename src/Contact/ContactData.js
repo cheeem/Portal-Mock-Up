@@ -22,15 +22,9 @@ const ContactData = ({ contactKeys, selectedContact }) => {
   
   const basicData = createDataSection(contactKeys, selectedContact, "basic");
   const advancedData = createDataSection(contactKeys, selectedContact, "advanced");
-
-  const style = selectedContact ? {
-    padding: `10px 20px`,
-    borderLeft: `var(--contact-border-size) solid #EFEFEF`,
-    //transition: `0.5s`,
-  } : undefined;
   
   return (
-    <div className="contact-data" style={style}>
+    <div className={`contact-data ${selectedContact ? "contact-data-visible" : ""}`}>
       <div className="contact-data-display"> 
         {basicData}
         {advancedData}

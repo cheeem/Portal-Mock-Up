@@ -37,11 +37,11 @@ const ContactNav = ({ contactKeys, contactDisplay, searchOptions, dispatch }) =>
       </datalist> 
     </div>
     <div className="contact-nav-options">
-      <p className="contact-reset"
+      <p className="contact-nav-btn contact-reset"
         onClick={() => dispatch({type: ACTIONS.RESET})}
       > Reset Filters 🔄 </p>
       <div className="contact-sort">
-        <p className="contact-sort-direction"
+        <p className="contact-nav-btn contact-sort-direction"
           onClick={() => dispatch({type: ACTIONS.SORT_DIRECTION})}
         >
           {searchOptions.sort.isDescending ? "Descending 🔽" : "Ascending 🔼"}

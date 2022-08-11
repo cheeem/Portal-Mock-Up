@@ -1,5 +1,4 @@
 import "./ContactList.css";
-import { useState } from "react";
 import { pluck, unique } from "../Utils/arrayUtils.js";
 
 const ACTIONS = {
@@ -42,44 +41,22 @@ const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dis
 }
 
 const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelectedContact }) => {
-
-  const [hovered, setHovered] = useState(false);
   
   //replace empty values with empty strings
   Object.values(contact.display).forEach(value => {if(!value) value = ""});
   //determine if the contactItem is selected
   const isSelected = contact.id === selectedContact?.id;
-  //define styles
-    //key container styles
-    const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `white`; 
-    const position = isSelected ? `sticky` : `unset`;
-    const top = `calc(var(--contact-border-size) + var(--contact-nav-height) + var(--contact-list-filter-height))`;
-    const bottom = `0`;
-    //key text styles
-    const color = isSelected ? `white` : `black`;
-    //universal styles
-    const transition = isSelected ? `0.2s` : '0.1s';
-
+  
   return (
     <div className="contact-list-row contact-list-item"
       onClick={() => setSelectedContact(() => isSelected ? undefined : contact)}
-      onMouseEnter={() => setHovered(() => true)}
-      onMouseLeave={() => setHovered(() => false)}
     >
-      <div className="contact-list-key"
-        style={{transition, backgroundColor, position, top, bottom}}
-      > 
-        <p
-          style={{transition, color}}
-        > {rowIndex + 1} </p>
+      <div className={`contact-list-key ${isSelected ? "contact-list-key-selected" : ""}`}> 
+        <p> {rowIndex + 1} </p>
       </div>
       {contactKeys.display.map((key, itemIndex) => (
-        <div className="contact-list-key" key={`${rowIndex}-${itemIndex}`}
-          style={{transition, backgroundColor, position, top, bottom}}
-        >
-          <p title={contact[`display`][key.id]}
-            style={{transition, color}}
-          > {contact[`display`][key.id]} </p>
+        <div className={`contact-list-key ${isSelected ? "contact-list-key-selected" : ""}`} key={`${rowIndex}-${itemIndex}`}>
+          <p title={contact[`display`][key.id]}> {contact[`display`][key.id]} </p>
         </div>
       ))}
     </div>
