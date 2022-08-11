@@ -7,12 +7,13 @@
 
 .contact-data-display {
     position: sticky;
-    top: calc(var(--nav-height) + var(--contact-border-size));
+    top: var(--contact-border-size);
 
     padding: 10px 0;
 }
 
 .contact-data-section {
+    
 }
 
 .contact-data-header {

@@ -51,9 +51,9 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelec
   const isSelected = contact.id === selectedContact?.id;
   //define styles
     //key container styles
-    const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `unset`; 
+    const backgroundColor =  isSelected ? `var(--highlight)` : hovered ? `#EFEFEF` : `white`; 
     const position = isSelected ? `sticky` : `unset`;
-    const top = isSelected ? `calc(var(--nav-height) + var(--contact-border-size) + var(--contact-nav-height) + var(--contact-list-filter-height))` : `unset`
+    const top = `calc(var(--contact-border-size) + var(--contact-nav-height) + var(--contact-list-filter-height))`;
     const bottom = `0`;
     //key text styles
     const color = isSelected ? `white` : `black`;

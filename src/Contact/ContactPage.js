@@ -83,12 +83,6 @@ function ContactPage({ user, contacts, contactKeys }) {
   return (
     <>
       <div className="contact-page">
-        <div className="contact-header">
-          <h1 className="contact-welcome"> 
-            👋 Welcome to Your Contacts
-            {user?.firstName ? `, ${user.firstName}.` : undefined}
-          </h1> 
-        </div> 
         <div className="contact-body-border-top"> </div>
         <div className="contact-body">
           <div className="contact-access"> 

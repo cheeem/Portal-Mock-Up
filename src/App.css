@@ -13,6 +13,7 @@
 :root {
     /* translucency */
     --translucency-alpha: 0.1;
+    
     /* color palette */
 	--white: rgba(255, 255, 255, 1);
 	--black: rgba(34, 34, 34, 1);
@@ -25,20 +26,39 @@
 	--purple: rgba(164, 90, 149, 1);
 	--orange: rgba(248, 141, 42, 1);
 	--transparent: rgba(255, 255, 255, 0);
+
+    /* filter color palette */
+    /* --filter-white: invert(76%) sepia(100%) saturate(0%) hue-rotate(156deg) brightness(108%) contrast(106%); */
+    
     /* highlights */
     --highlight: var(--light-blue);
     --highlight-translucent: var(--light-blue-translucent);
-    /* nav ratios */
-    --nav-height: 60px;
-    /* contact ratios */
-    --contact-nav-height: 100px;
-    --contact-header-height: 250px;
-    --contact-border-size: 12px;
-    --contact-list-filter-height: 43px;
+    --secondary-highlight: white;
+    
+    /* universal styles */
+    --background-color: var(--light-blue);
 }
 
 span {
     font-weight: 800;
     color: var(--highlight); 
+}
+
+.app {
+    background: var(--background-color)
+}
+
+.app-header {
+    position: relative;
+
+    height: var(--contact-header-height); 
+}
+
+.app-welcome {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    color: var(--white);
 }
 

@@ -1,35 +1,27 @@
+:root {
+    --contact-nav-height: 100px;
+    --contact-header-height: 250px;
+    --contact-border-size: 12px;
+    --contact-list-filter-height: 43px;
+}
+
 .contact-page {
-
-}
-
-.contact-header {
-    position: relative;
-
-    height: var(--contact-header-height);
-
-    background-image: linear-gradient(to bottom right, var(--blue), var(--blue), var(--light-blue), var(--light-blue));
-}
-
-.contact-welcome {
-    position: absolute;
-    bottom: 15px;
-    left: 50px;
-
-    color: var(--white);
 }
 
 .contact-body {
     position: relative;
     display: flex;
     justify-content: center;
+
+    background-color: white;
 }
 
 .contact-body-border-top {
     z-index: 5;
     position: sticky;
-    top: var(--nav-height);
+    top: -1px;
 
-    height: var(--contact-border-size);
+    height: calc(var(--contact-border-size) + 1px);
     
     background-color: #EFEFEF;
 }

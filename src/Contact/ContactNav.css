@@ -1,7 +1,7 @@
 .contact-nav {
     z-index: 4;
     position: sticky;
-    top: calc(var(--nav-height) + var(--contact-border-size));
+    top: var(--contact-border-size);
     display: flex;
     justify-content: space-between;
 
@@ -52,5 +52,5 @@
 }
 
 .contact-reset:hover, .contact-sort-direction:hover {    
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
 }
