@@ -6,14 +6,8 @@
 }
 
 .nav {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-
   width: max-content;
   padding: 0 calc(var(--nav-item-padding) * 1.5) 1em calc(var(--nav-item-padding) * 1.5);
-
-  margin: 0 auto;
 
   background-color: white;
 

@@ -6,7 +6,7 @@ const ACTIONS = {
 }
 
 const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dispatch, selectedContact, setSelectedContact }) => {
-  //`repeat(${contactKeys.display.length}, auto)`
+
   return (
     <div className="contact-list">
       <div className="contact-list-table"

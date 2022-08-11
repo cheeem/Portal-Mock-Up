@@ -1,6 +1,5 @@
 .contact-list-table {
     display: grid;
-    flex-grow: 1;
 }
 
 .contact-list-none-found {

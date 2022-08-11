@@ -1,5 +1,5 @@
 import "./ContactPage.css";
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect, /*useLayoutEffect, useRef,*/ useReducer } from "react";
 import { ContactNav } from "./ContactNav.js";
 import { ContactList } from "./ContactList.js";
 import { ContactData } from "./ContactData.js";
@@ -14,7 +14,7 @@ const ACTIONS = {
   SORT_DIRECTION: "sort-direction",
 }
 
-function ContactPage({ user, contacts, contactKeys }) {
+const ContactPage = ({ user, contacts, contactKeys }) => {
 
   const reducer = (searchOptions, action) => {
     switch(action.type) {
@@ -67,7 +67,11 @@ function ContactPage({ user, contacts, contactKeys }) {
         1
       ) : (
         //sort by the selected sort key by chosen ascending/descending order
-        (searchOptions.sort.isDescending ? a : b)[`display`][searchOptions.sort.id] < (searchOptions.sort.isDescending ? b : a)[`display`][searchOptions.sort.id] ? ( 
+        (
+          (searchOptions.sort.isDescending ? a : b)[`display`][searchOptions.sort.id]
+        ) < (
+          (searchOptions.sort.isDescending ? b : a)[`display`][searchOptions.sort.id]
+        ) ? ( 
           1
         ) : (
           -1

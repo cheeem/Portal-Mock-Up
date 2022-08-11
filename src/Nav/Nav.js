@@ -34,7 +34,9 @@ const CustomLink = ({ to, index, setSelectedIndex, children, ...props }) => {
     }, [isActive, index, setSelectedIndex]);
 
     return (
-      <li className={isActive ? "nav-active" : ""} style={isActive ? {"--nav-selected": index} : {}}>
+      <li className={isActive ? "nav-active" : ""}
+        style={isActive ? {"--nav-selected": index} : {}}
+      >
         <Link to={to} {...props}>
           {children}
         </Link>

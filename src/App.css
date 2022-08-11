@@ -51,11 +51,25 @@ span {
     height: var(--contact-header-height); 
 }
 
-.app-welcome {
+.app-header-content {
     position: absolute;
     bottom: 20px;
-    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
+    width: 100%;
+
+    padding: 0 20px;
+}
+
+.app-header-welcome {
     color: white;
+}
+
+@media only screen and (max-width: 1100px) {
+    .app-header-welcome {
+        display: none;
+    }
 }
 
