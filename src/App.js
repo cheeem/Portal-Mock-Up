@@ -186,16 +186,16 @@ const linkList = [
 const App = () => {
 
   const location = useLocation();
-
   let destination = linkList.find(link => link.path === location.pathname).label;
   if(destination !== "Home") destination = `to Your ${destination}`;
+  //<span className="secondary"> 
 
   return (
     <div className="app">
         <div className="app-header">
           <div className="app-header-content"> 
             <h1 className="app-header-welcome">
-              👋 Welcome {destination} {user?.firstName ? `, ${user.firstName}.` : undefined}
+              👋 Welcome {destination}{user?.firstName ? `, ${user.firstName}.` : undefined}
             </h1>
             <Nav linkList={linkList} />
           </div>

@@ -12,7 +12,7 @@ const createDataSection = (contactKeys, selectedContact, type) => {
   ));
   return fields.length ? ( 
     <div className="contact-data-section">
-      <h3 className="contact-data-header"> <span> {capitalize(type)} </span> Information </h3>
+      <h3 className="contact-data-header"> <span data-txt={capitalize(type)}> {capitalize(type)} </span> Information </h3>
       {fields}
     </div> 
   ) : undefined

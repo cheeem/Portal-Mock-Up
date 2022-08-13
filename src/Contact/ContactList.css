@@ -33,13 +33,13 @@
 
     background-color: white;
 
-    border-bottom: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--neutral-1);
 
     transition: 0.1s;
 }
 
 .contact-list-item:hover div:not(.contact-list-key-selected) {
-    background-color: var(--light-grey);
+    background-color: var(--neutral-1);
 }
 
 .contact-list-key-selected {
@@ -47,7 +47,7 @@
     top: calc(var(--contact-border-size) + var(--contact-nav-height) + var(--contact-list-filter-height));
     bottom: 0;
 
-    background-color: var(--highlight);
+    background-color: var(--highlight-2);
 
     transition: 0.2s;
 }
@@ -67,10 +67,4 @@
 
 .contact-list-key p, .contact-list-key a {
     font-weight: 200;
-}
-
-.contact-list-key-selected p, .contact-list-key-selected a {
-    color: white;
-
-    transition: 0.2s;
 }

@@ -10,6 +10,8 @@
     display: flex;
     justify-content: center;
 
+    width: 100%;
+
     background-color: white;
 }
 
@@ -20,6 +22,10 @@
 
     height: calc(var(--contact-border-size) + 1px);
     
-    background-color: var(--light-grey);
+    background-color: var(--neutral-1);
+}
+
+.contact-access {
+    width: 100%;
 }
 

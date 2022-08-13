@@ -5,44 +5,53 @@
 
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: black;
+    color: var(--neutral-2);
     text-decoration: none;
-    /* text-shadow: 0px max(2px, 0.3vw) max(15px, 1.5vw) rgba(0,0,0,0.2); */
 }
 
 :root {    
     /* color palette */
-	--grey: rgba(71, 71, 71, 1);
-    --light-grey: rgba(239, 239, 239, 1);
-	--light-blue: rgba(0, 171, 200, 1);
-	--green: rgba(162, 212, 94, 1);
-	--purple: rgba(164, 90, 149, 1);
-	--orange: rgba(248, 141, 42, 1);
-
-    /* alpha color palette */
-    --transparent: rgba(255, 255, 255, 0);
-    --translucency-alpha: 0.1;
-    --light-blue-translucent: rgba(0, 171, 200, var(--translucency-alpha));
+    --neutral-1: #EFEFEF;
+	--neutral-2: #2C3333;
+	--highlight-1: #F7DE1C;
+	--highlight-2: #F7DE1C;
 
     /* filter color palette */
-    /* --filter-white: invert(76%) sepia(100%) saturate(0%) hue-rotate(156deg) brightness(108%) contrast(106%); */
-    
-    /* highlights */
-    --highlight: var(--light-blue);
-    --highlight-translucent: var(--light-blue-translucent);
-    --highlight-secondary: /* var(--orange); */ white;
+    --filter-1: invert(76%) sepia(100%) saturate(0%) hue-rotate(156deg) brightness(108%) contrast(106%); /* white */
+    --filter-2: invert(16%) sepia(15%) saturate(346%) hue-rotate(131deg) brightness(95%) contrast(90%); /* dark grey */
     
     /* universal styles */
-    --background-color: var(--light-blue);
+    --background-color: var(--neutral-2);
+    --span-color: var(--highlight-2);
+    --icon-filter: var(--filter-2);
 }
 
 span {
+    position: relative;
+
     font-weight: 800;
-    color: var(--highlight); 
+    color: var(--span-color);
+}
+
+/* span::before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -0.07em;
+    
+    content: attr(data-txt);
+    font-size: calc(1em + 0.03em);
+    font-weight: 800;
+    color: var(--neutral-2);
+} */
+
+.secondary-span span {
+    font-weight: 800;
+    color: var(--highlight-2);
 }
 
 .app {
-    background: var(--background-color)
+    background: var(--background-color);
 }
 
 .app-header {
@@ -65,9 +74,10 @@ span {
 
 .app-header-welcome {
     color: white;
+    font-size: max(27.5px, 2.75vw);
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1000px) {
     .app-header-welcome {
         display: none;
     }

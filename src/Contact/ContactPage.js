@@ -14,7 +14,37 @@ const ACTIONS = {
   SORT_DIRECTION: "sort-direction",
 }
 
-const ContactPage = ({ user, contacts, contactKeys }) => {
+/*
+const useIsOverflow = (ref, callback) => {
+  const [isOverflow, setIsOverflow] = useState(undefined);
+
+  useLayoutEffect(() => {
+    const { current } = ref;
+
+    const trigger = () => {
+      const hasOverflow = current.scrollWidth > current.clientWidth;
+
+      setIsOverflow(hasOverflow);
+
+      if (callback) callback(hasOverflow);
+    };
+
+    if (current) {
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(trigger).observe(current);
+      }
+
+      trigger();
+    }
+  }, [callback, ref]);
+
+  return isOverflow;
+};
+*/
+
+const ContactPage = ({ user, contacts, /*keys*/ contactKeys}) => {
+
+  /*const [contactKeys, setContactKeys] = useState(keys);*/
 
   const reducer = (searchOptions, action) => {
     switch(action.type) {
@@ -83,10 +113,24 @@ const ContactPage = ({ user, contacts, contactKeys }) => {
   useEffect(() => {
     if(selectedContact && !contactDisplay.find(contact => contact.id === selectedContact?.id)) setSelectedContact(undefined);
   }, [contactDisplay, selectedContact]);
-  
+
+  /*
+  const contactPageRef = useRef(null);
+  const contactPageOverflow = useIsOverflow(contactPageRef);
+
+  console.log(contactPageOverflow);
+  console.log(contactKeys);
+
+  while(contactPageOverflow) {
+    if(!contactKeys.display.length-1) return;
+    console.log("removed");
+    setContactKeys(() => {return {...contactKeys, display: contactKeys.slice(-1)}});
+  }
+  */
+
   return (
     <>
-      <div className="contact-page">
+      <div className="contact-page" ref={/*contactPageRef*/ undefined}>
         <div className="contact-body-border-top"> </div>
         <div className="contact-body">
           <div className="contact-access"> 

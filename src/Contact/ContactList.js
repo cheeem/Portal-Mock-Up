@@ -20,7 +20,7 @@ const ContactList = ({ contacts, contactKeys, contactDisplay, searchOptions, dis
             const selectedValue = searchOptions.filters.find(filter => filter.id === key.id)?.value;
             return (
               <div className="contact-list-filter" key={index}>
-                <select value={selectedValue ? selectedValue : key.display}
+                <select value={selectedValue ?? key.display}
                   onChange={(e) => dispatch({type: ACTIONS.ADD_FILTER, payload: {id: key.id, value: e.target.value}})}
                 >
                   <option value=""> {key.display} </option>
