@@ -56,7 +56,11 @@ const ContactItem = ({ rowIndex, contactKeys, contact, selectedContact, setSelec
       </div>
       {contactKeys.display.map((key, itemIndex) => (
         <div className={`contact-list-key ${isSelected ? "contact-list-key-selected" : ""}`} key={`${rowIndex}-${itemIndex}`}>
-          <p title={contact[`display`][key.id]}> {contact[`display`][key.id]} </p>
+          {key.link ? (
+            <a title={contact[`display`][key.id]} href={key.link} target="_blank" rel="noreferrer"> {contact[`display`][key.id]} </a>
+          ) : (
+            <p title={contact[`display`][key.id]}> {contact[`display`][key.id]} </p>
+          )}
         </div>
       ))}
     </div>

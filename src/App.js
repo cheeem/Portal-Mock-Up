@@ -12,30 +12,6 @@ const user = {
     rank: 0,
 };
 
-const MaureenHarperArray = [];
-for(let i = 0; i < 30; i++){
-  MaureenHarperArray.push({
-    id: 5+i,
-    display: {
-      fullName: "Maureen Harper",
-      company: "Customer Agency",
-      email: "m.harper@customeragency.com",
-      phoneNumber: "202-555-0178",
-      location: "Washington, DC",
-    },
-    basic: {
-      fullName: "Maureen Harper",
-      company: "Customer Agency",
-      email: "m.harper@customeragency.com",
-      phoneNumber: "202-555-0178",
-      location: "Washington, DC",
-    },
-    advanced: {
-      
-    },
-  });
-}
-
 const contacts = [
   {
     id: 0,
@@ -64,14 +40,12 @@ const contacts = [
       company: "Technology Incorporated",
       email: "ali.yu@technologyinc.com",
       phoneNumber: "202-555-3499",
-      location: "Los Angeles, CA",
     },
     basic: {
       fullName: "Ali Yu",
       company: "Technology Incorporated",
       email: "ali.yu@technologyinc.com",
       phoneNumber: "202-555-3499",
-      location: "Los Angeles, CA",
     },
     advanced: {
 
@@ -110,47 +84,332 @@ const contacts = [
       location: "Town, NV",
     },
     advanced: {
-      jordans: "FAKE"
+
     },
   },
   {
     id: 4,
     display: {
-      fullName: "ZAZA Jordan",
+      fullName: "Yannick Jordan",
       company: "Lofts",
       email: "iownlofts@lofts.com",
+      phoneNumber: "833-555-9109",
       location: "Havana, MI",
     },
     basic: {
-      fullName: "ZAZA Jordan",
+      fullName: "Yannick Jordan",
       company: "Lofts",
       email: "iownlofts@lofts.com",
+      phoneNumber: "833-555-9109",
       location: "Havana, MI",
     },
     advanced: {
-      jordans: "REAL"
+
     },
   },
-  ...MaureenHarperArray
+  {
+    id: 5,
+    display: {
+      fullName: "Maureen Harper",
+      company: "Customer Agency",
+      email: "m.harper@customeragency.com",
+      phoneNumber: "202-555-0178",
+      location: "Washington, DC",
+    },
+    basic: {
+      fullName: "Maureen Harper",
+      company: "Customer Agency",
+      email: "m.harper@customeragency.com",
+      phoneNumber: "202-555-0178",
+      location: "Washington, DC",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 6,
+    display: {
+      fullName: "Brian Landerman",
+      company: "Harmony Industries",
+      email: "br.landerman@harmony.com",
+      phoneNumber: "447-555-8080",
+      location: "New York City, NY",
+    },
+    basic: {
+      fullName: "Brian Landerman",
+      company: "Harmony Industries",
+      email: "br.landerman@harmony.com",
+      phoneNumber: "447-555-8080",
+      location: "New York City, NY",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 7,
+    display: {
+      fullName: "Ryan Demetrius",
+      company: "Nomand Incorporated",
+      email: "ryandemetrius@nomand.com",
+      phoneNumber: "212-555-7992",
+      location: "San Francisca, CA",
+    },
+    basic: {
+      fullName: "Ryan Demetrius",
+      company: "Nomand Incorporated",
+      email: "ryandemetrius@nomand.com",
+      phoneNumber: "212-555-7992",
+      location: "San Francisca, CA",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 8,
+    display: {
+      fullName: "Skylar Demetrius",
+      company: "Flamingo Flours",
+      email: "s.demetrius@fflowers.org",
+      phoneNumber: "212-555-6029",
+      location: "San Francisca, CA",
+    },
+    basic: {
+      fullName: "Skylar Demetrius",
+      company: "Flamingo Flours",
+      email: "s.demetrius@fflowers.org",
+      phoneNumber: "212-555-6029",
+      location: "San Francisca, CA",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 9,
+    display: {
+      fullName: "Chris Damaleon",
+      company: "Damaleon Distribution",
+      location: "Chicago, IL",
+    },
+    basic: {
+      fullName: "Chris Damaleon",
+      company: "Damaleon Distribution",
+      location: "Chicago, IL",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 10,
+    display: {
+      fullName: "Xan Broste",
+      location: "Nowhere, WY",
+    },
+    basic: {
+      fullName: "Xan Broste",
+      location: "Nowhere, WY",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 11,
+    display: {
+      fullName: "Vance Blonders",
+      company: "The Tea Company",
+      email: "vance.blonders@ttc.com",
+      phoneNumber: "505-555-5050",
+      location: "London, TX",
+    },
+    basic: {
+      fullName: "Vance Blonders",
+      company: "The Tea Company",
+      email: "vance.blonders@ttc.com",
+      phoneNumber: "505-555-5050",
+      location: "London, TX",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 12,
+    display: {
+      fullName: "Gordan Freeman",
+      company: "Half Life Industries",
+      email: "freeman@halflife.org",
+      phoneNumber: "104-555-9502",
+      location: "Salem, MA",
+    },
+    basic: {
+      fullName: "Gordan Freeman",
+      company: "Half Life Industries",
+      email: "freeman@halflife.org",
+      phoneNumber: "104-555-9502",
+      location: "Salem, MA",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 13,
+    display: {
+      fullName: "Edan Jones",
+      company: "Quantative Analysis",
+      email: "edanj@quantanalysis.com",
+      phoneNumber: "991-555-2200",
+      location: "Freehold, NJ",
+    },
+    basic: {
+      fullName: "Edan Jones",
+      company: "Quantative Analysis",
+      email: "edanj@quantanalysis.com",
+      phoneNumber: "991-555-2200",
+      location: "Freehold, NJ",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 14,
+    display: {
+      fullName: "Lexi Adams",
+      company: "Lexi's Company",
+      phoneNumber: "452-555-6456",
+      location: "Maimi, Fl",
+    },
+    basic: {
+      fullName: "Lexi Adams",
+      company: "Lexi's Company",
+      phoneNumber: "452-555-6456",
+      location: "Maimi, Fl",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 15,
+    display: {
+      fullName: "Winston Adams",
+      company: "Lexi's Company",
+      email: "winston@lexi.edu",
+      phoneNumber: "452-555-6456",
+      location: "Maimi, Fl",
+    },
+    basic: {
+      fullName: "Winston Adams",
+      company: "Lexi's Company",
+      email: "winston@lexi.edu",
+      phoneNumber: "452-555-6456",
+      location: "Maimi, Fl",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 16,
+    display: {
+      fullName: "Daniel Clay",
+      email: "danielclay@clayinc.com",
+      phoneNumber: "452-555-3003",
+    },
+    basic: {
+      fullName: "Daniel Clay",
+      email: "danielclay@clayinc.com",
+      phoneNumber: "452-555-3003",
+    },
+    advanced: {
+      
+    },
+  },
+  {
+    id: 17,
+    display: {
+      fullName: "Blair Lande",
+      company: "Morgan & Son",
+      email: "lande.blair@morganandson.org",
+      phoneNumber: "330-555-1909",
+      location: "New York City, NY",
+    },
+    basic: {
+      fullName: "Blair Lande",
+      company: "Morgan & Son",
+      email: "lande.blair@morganandson.org",
+      phoneNumber: "330-555-1909",
+      location: "New York City, NY",
+    },
+    advanced: {
+
+    },
+  },
+  {
+    id: 18,
+    display: {
+      fullName: "Peter Neon",
+      company: "Morgan & Son",
+      email: "peter.neon@morganandson.org",
+      phoneNumber: "106-555-4730",
+      location: "Hoboken, NJ",
+    },
+    basic: {
+      fullName: "Peter Neon",
+      company: "Morgan & Son",
+      email: "peter.neon@morganandson.org",
+      phoneNumber: "106-555-4730",
+      location: "Hoboken, NJ",
+    },
+    advanced: {
+
+    },
+  },
+    {
+      id: 18,
+      display: {
+        fullName: "Panama Ulda",
+        company: "Floor Alliance",
+        email: "panama@floor-alliance.org",
+        phoneNumber: "513-555-2204",
+        location: "Miami, Fl",
+      },
+      basic: {
+        fullName: "Panama Ulda",
+        company: "Floor Alliance",
+        email: "panama@floor-alliance.org",
+        phoneNumber: "513-555-2204",
+        location: "Miami, Fl",
+      },
+      advanced: {
+  
+      },
+  },
 ]
 
 const contactKeys = {
   display: [
-    {id: "fullName", display: "👤 Name"},
-    {id: "company", display: "🏢 Company"},
-    {id: "email", display: "📧 Email"},
-    {id: "phoneNumber", display: "📱 Phone Number"},
-    {id: "location", display: "🗺️ Location"},
+    {id: "fullName", display: "👤 Name",},
+    {id: "company", display: "🏢 Company",},
+    {id: "email", display: "📧 Email",},
+    {id: "phoneNumber", display: "📱 Phone Number",},
+    {id: "location", display: "🗺️ Location",},
   ],
   basic: [
-    {id: "fullName", display: "👤 Name"},
-    {id: "company", display: "🏢 Company"},
-    {id: "email", display: "📧 Email"},
-    {id: "phoneNumber", display: "📱 Phone Number"},
-    {id: "location", display: "🗺️ Location"},
+    {id: "fullName", display: "👤 Name",},
+    {id: "company", display: "🏢 Company",},
+    {id: "email", display: "📧 Email",},
+    {id: "phoneNumber", display: "📱 Phone Number",},
+    {id: "location", display: "🗺️ Location",},
   ],
   advanced: [
-    {id: "jordans", display: "👟 Jordans"}
+
   ],
   /*{id: "position", display: "Position"},*/
 };
